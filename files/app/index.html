@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCP Foundation Secure Terminal</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="scripts/PasswortProtect.js" defer></script>
+</head>
+<body>
+    <div class="terminal-container">
+        <div class="header">
+            <div class="scp-logo">SCP Foundation</div>
+            <div class="classification">LEVEL 4 CLEARANCE REQUIRED</div>
+        </div>
+        
+        <div class="login-screen">
+            <div class="login-prompt">
+                <p class="blink">SECURE ACCESS TERMINAL</p>
+                <form id="login-form">
+                    <input type="text" placeholder="ENTER USERNAME" class="terminal-input" required id="username">
+                    <input type="password" placeholder="ENTER CLEARANCE CODE" class="terminal-input" required id="password">
+                    <button type="submit" class="terminal-button">AUTHENTICATE</button>
+                    <div id="login-message" class="login-message"></div>
+                </form>
+            </div>
+        </div>
+
+        <div class="terminal-footer">
+            <div class="warning">WARNING: UNAUTHORIZED ACCESS WILL BE TERMINATED</div>
+            <div class="status">SYSTEM STATUS: SECURE</div>
+        </div>
+    </div>
+</body>
+</html>

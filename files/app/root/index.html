@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foundation OS</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="../scripts/GUIControl.js" defer></script>
+    <script src="../scripts/ReportScript.js" defer></script>
+</head>
+<body>
+    <div class="terminal-container fade-in">
+        <div class="header">
+            <div class="scp-logo">SCP Foundation</div>
+            <div class="classification">SECURE SYSTEM ACTIVE</div>
+        </div>
+        
+        <div class="main-content">
+            <div class="terminal-window appear">
+                <div class="terminal-header">
+                    <span class="terminal-title">MAIN TERMINAL</span>
+                </div>
+                <div class="terminal-body">
+                    <div class="boot-sequence">
+                        <p class="typing">>_ INITIALIZING SCP FOUNDATION OS VERSION: Alpha 1.0</p>
+                        <p class="typing">>_ LOADING SECURE PROTOCOLS</p>
+                        <p class="typing">>_ SYSTEM READY</p>
+                    </div>
+                    <div class="menu-items">
+                        <button class="terminal-button" data-section="reports">REPORTS</button>
+                        <button class="terminal-button" data-section="personnel">PERSONNEL DATABASE</button>
+                        <button class="terminal-button" data-section="containment">CONTAINMENT PROTOCOLS</button>
+                        <button class="terminal-button" data-section="security">SECURITY SYSTEMS</button>
+                        <button class="terminal-button" data-section="settings">SETTINGS</button>
+                        <button class="terminal-button" data-section="help">REPORT GUIDE</button>
+                    </div>
+                    
+                    <!-- Content Sections -->
+                    <div class="content-sections">
+                        <div id="reports" class="section-content hidden">
+                            <h2>GLOBAL INCIDENT REPORTS</h2>
+                            <p class="typing">[ACCESSING WORLDWIDE AGENCY REPORTS...]</p>
+                            
+                            <div class="reports-container">
+                                <a href="./reports-editor.html" class="edit-button terminal-button">EDIT NEWEST REPORTS</a>
+                                
+                                <div class="report-grid">
+                                    <div class="report-entry urgent">
+                                        <div class="report-header">
+                                            <span class="agency">FBI</span>
+                                            <span class="timestamp">23:45:12</span>
+                                            <span class="location">NEVADA, USA</span>
+                                        </div>
+                                        <p class="report-brief">Unidentified aerial phenomenon with reality-bending properties reported near Area 51.</p>
+                                        <button class="report-button" data-report="FBI-2023-112">ACCESS REPORT</button>
+                                    </div>
+
+                                    <div class="report-entry high">
+                                        <div class="report-header">
+                                            <span class="agency">GRU</span>
+                                            <span class="timestamp">23:30:45</span>
+                                            <span class="location">SIBERIA, RUSSIA</span>
+                                        </div>
+                                        <p class="report-brief">Multiple disappearances linked to temporal anomaly in abandoned research facility.</p>
+                                        <button class="report-button" data-report="GRU-2023-089">ACCESS REPORT</button>
+                                    </div>
+
+                                    <div class="report-entry medium">
+                                        <div class="report-header">
+                                            <span class="agency">MI6</span>
+                                            <span class="timestamp">23:15:33</span>
+                                            <span class="location">LONDON, UK</span>
+                                        </div>
+                                        <p class="report-brief">Series of statues exhibiting autonomous movement during surveillance blackouts.</p>
+                                        <button class="report-button" data-report="MI6-2023-173">ACCESS REPORT</button>
+                                    </div>
+
+                                    <div class="report-entry standard">
+                                        <div class="report-header">
+                                            <span class="agency">MOSSAD</span>
+                                            <span class="timestamp">23:00:18</span>
+                                            <span class="location">TEL AVIV, ISRAEL</span>
+                                        </div>
+                                        <p class="report-brief">Ancient artifact with unexplained prophetic inscriptions discovered.</p>
+                                        <button class="report-button" data-report="MOS-2023-056">ACCESS REPORT</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="report-viewer hidden">
+                                <div class="viewer-header">
+                                    <h3>DETAILED REPORT ANALYSIS</h3>
+                                    <button class="close-viewer">×</button>
+                                </div>
+                                <div class="viewer-content">
+                                    <div class="loading-sequence">
+                                        <p class="typing">>_ ESTABLISHING SECURE CONNECTION</p>
+                                        <p class="typing">>_ ATTEMPTING TO ACCESS REPORT</p>
+                                        <p class="typing">>_ ACCESS DENIED</p>
+                                        <p class="typing error-message">>_ ERROR: REPORT NOT YET CREATED IN DATABASE</p>
+                                    </div>
+                                    <div class="report-details hidden">
+                                        <div class="access-denied">
+                                            <p class="error-title">⚠ ACCESS DENIED ⚠</p>
+                                            <p class="error-description">Cannot Access Uncreated Report.</p>
+                                            <p class="error-suggestion">Please check back later or contact your system administrator.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="viewer-footer">
+                                    <button class="action-button" disabled>RETRY ACCESS</button>
+                                    <button class="action-button close-button">CLOSE WINDOW</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="personnel" class="section-content hidden">
+                            <h2>PERSONNEL DATABASE</h2>
+                            <p class="typing">[ACCESSING SECURE MTF RECORDS...]</p>
+                            <div class="mtf-container">
+                                <div class="mtf-unit">
+                                    <h3>MTF Alpha-1 "Red Right Hand"</h3>
+                                    <div class="mtf-subunit">
+                                        <h4>UNIT Alpha-1.1 <span class="status-label">Available</span></h4>
+                                        <ul>
+                                            <li class="team-leader">CMD// Blackwood, J.</li>
+                                            <li>OPS// Morrison, S. [Field]</li>
+                                            <li>TAC// Chen, M. [Combat]</li>
+                                        </ul>
+                                    </div>
+                                    <div class="mtf-subunit">
+                                        <h4>UNIT Alpha-1.2 <span class="status-label">Available</span></h4>
+                                        <ul>
+                                            <li class="team-leader">MAJ// Kovac, E.</li>
+                                            <li>LT// Wilson, J. [Field]</li>
+                                            <li>SGT// Torres, M. [Combat]</li>
+                                            <li>CPL// Wright, D. [Tech]</li>
+                                        </ul>
+                                    </div>
+                                    <div class="mtf-subunit">
+                                        <h4>UNIT Alpha-1.3 <span class="status-label">Available</span></h4>
+                                        <ul>
+                                            <li class="team-leader">CPT// Johnson, L.</li>
+                                            <li>LT// Brown, K. [Field]</li>
+                                            <li>SGT// Davis, R. [Combat]</li>
+                                            <li>CPL// Miller, T. [Tech]</li>
+                                            <li>PVT// Anderson, J. [Support]</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="mtf-unit">
+                                    <h3>MTF Alpha-9 "Last Hope"</h3>
+                                    <div class="mtf-subunit">
+                                        <h4>UNIT Alpha-9.1 <span class="status-label">Available</span></h4>
+                                        <ul>
+                                            <li class="team-leader">MAJ// Hayes, R.</li>
+                                            <li>LT// Chang, E. [Field]</li>
+                                            <li>SGT// Baker, T. [Combat]</li>
+                                            <li>CPL// Warren, L. [Medic]</li>
+                                        </ul>
+                                    </div>
+                                    <div class="mtf-subunit">
+                                        <h4>UNIT Alpha-9.2 <span class="status-label">Available</span></h4>
+                                        <ul>
+                                            <li class="team-leader">CPT// Thompson, A.</li>
+                                            <li>LT// Rivera, M. [Field]</li>
+                                            <li>SGT// Brooks, K. [Combat]</li>
+                                        </ul>
+                                    </div>
+                                    <div class="mtf-subunit">
+                                        <h4>UNIT Alpha-9.3 <span class="status-label">Available</span></h4>
+                                        <ul>
+                                            <li class="team-leader">CPT// Harris, J.</li>
+                                            <li>LT// Kim, S. [Field]</li>
+                                            <li>SGT// Brown, T. [Combat]</li>
+                                            <li>CPL// Lee, A. [Medic]</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="mtf-unit">
+                                    <h3>MTF Beta-7 "Maz Hatters"</h3>
+                                    <div class="mtf-subunit">
+                                        <h4>UNIT Beta-7.1 <span class="status-label">Available</span></h4>
+                                        <ul>
+                                            <li class="team-leader">DR// Quinn, A.</li>
+                                            <li>LT// Nash, R. [Research]</li>
+                                            <li>SGT// Peters, W. [Security]</li>
+                                        </ul>
+                                    </div>
+                                    <div class="mtf-subunit">
+                                        <h4>UNIT Beta-7.2 <span class="status-label">Available</span></h4>
+                                        <ul>
+                                            <li class="team-leader">DR// Foster, I.</li>
+                                            <li>CPT// Gonzalez, M. [Research]</li>
+                                            <li>LT// Lee, C. [Security]</li>
+                                        </ul>
+                                    </div>
+                                    <div class="mtf-subunit">
+                                        <h4>UNIT Beta-7.3 <span class="status-label">Available</span></h4>
+                                        <ul>
+                                            <li class="team-leader">DR// Walker, J.</li>
+                                            <li>LT// Evans, M. [Research]</li>
+                                            <li>SGT// Carter, L. [Security]</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="mtf-unit">
+                                    <h3>MTF Gamma-5 "Red Herrings"</h3>
+                                    <div class="mtf-subunit">
+                                        <h4>UNIT Gamma-5.1 <span class="status-label">Available</span></h4>
+                                        <ul>
+                                            <li class="team-leader">CPT// Miller, S.</li>
+                                            <li>LT// Wong, A. [Intel]</li>
+                                            <li>SGT// Davis, M. [Recon]</li>
+                                        </ul>
+                                    </div>
+                                    <div class="mtf-subunit">
+                                        <h4>UNIT Gamma-5.2 <span class="status-label">Available</span></h4>
+                                        <ul>
+                                            <li class="team-leader">CPT// Harris, J.</li>
+                                            <li>LT// Kim, S. [Intel]</li>
+                                            <li>SGT// Brown, T. [Recon]</li>
+                                        </ul>
+                                    </div>
+                                    <div class="mtf-subunit">
+                                        <h4>UNIT Gamma-5.3 <span class="status-label">Available</span></h4>
+                                        <ul>
+                                            <li class="team-leader">CPT// Johnson, P.</li>
+                                            <li>LT// Davis, A. [Intel]</li>
+                                            <li>SGT// Wilson, G. [Recon]</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="mtf-unit">
+                                    <h3>MTF Epsilon-6 "Village Idiots"</h3>
+                                    <div class="mtf-subunit">
+                                        <h4>UNIT Epsilon-6.1 <span class="status-label">Available</span></h4>
+                                        <ul>
+                                            <li class="team-leader">MAJ// Smith, J.</li>
+                                            <li>CPT// Brown, L. [Cover]</li>
+                                            <li>LT// Taylor, R. [Intel]</li>
+                                        </ul>
+                                    </div>
+                                    <div class="mtf-subunit">
+                                        <h4>UNIT Epsilon-6.2 <span class="status-label">Available</span></h4>
+                                        <ul>
+                                            <li class="team-leader">CPT// Johnson, P.</li>
+                                            <li>LT// Davis, A. [Cover]</li>
+                                            <li>SGT// Wilson, G. [Intel]</li>
+                                        </ul>
+                                    </div>
+                                    <div class="mtf-subunit">
+                                        <h4>UNIT Epsilon-6.3 <span class="status-label">Available</span></h4>
+                                        <ul>
+                                            <li class="team-leader">CPT// Harris, K.</li>
+                                            <li>LT// Evans, D. [Cover]</li>
+                                            <li>SGT// Carter, A. [Intel]</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="mtf-unit">
+                                    <h3>MTF Epsilon-11 "Nine-Tailed Fox"</h3>
+                                    <div class="mtf-subunit">
+                                        <h4>UNIT Epsilon-11.1 <span class="status-label">Available</span></h4>
+                                        <ul>
+                                            <li class="team-leader">CMD// Stone, V.</li>
+                                            <li>LT// Drake, N. [Combat]</li>
+                                            <li>SGT// Winter, E. [Tactical]</li>
+                                        </ul>
+                                    </div>
+                                    <div class="mtf-subunit">
+                                        <h4>UNIT Epsilon-11.2 <span class="status-label">Available</span></h4>
+                                        <ul>
+                                            <li class="team-leader">CPT// Walker, J.</li>
+                                            <li>LT// Evans, M. [Combat]</li>
+                                            <li>SGT// Carter, L. [Tactical]</li>
+                                        </ul>
+                                    </div>
+                                    <div class="mtf-subunit">
+                                        <h4>UNIT Epsilon-11.3 <span class="status-label">Available</span></h4>
+                                        <ul>
+                                            <li class="team-leader">CPT// Harris, J.</li>
+                                            <li>LT// Kim, S. [Combat]</li>
+                                            <li>SGT// Brown, T. [Tactical]</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="mtf-unit">
+                                    <h3>MTF Zeta-9 "Mole Rats"</h3>
+                                    <div class="mtf-subunit">
+                                        <h4>UNIT Zeta-9.1 <span class="status-label">Available</span></h4>
+                                        <ul>
+                                            <li class="team-leader">CPT// Garcia, R.</li>
+                                            <li>LT// Martinez, C. [Demo]</li>
+                                            <li>SGT// Cooper, J. [Nav]</li>
+                                        </ul>
+                                    </div>
+                                    <div class="mtf-subunit">
+                                        <h4>UNIT Zeta-9.2 <span class="status-label">Available</span></h4>
+                                        <ul>
+                                            <li class="team-leader">CPT// Hernandez, L.</li>
+                                            <li>LT// Rivera, J. [Demo]</li>
+                                            <li>SGT// Brooks, A. [Nav]</li>
+                                        </ul>
+                                    </div>
+                                    <div class="mtf-subunit">
+                                        <h4>UNIT Zeta-9.3 <span class="status-label">Available</span></h4>
+                                        <ul>
+                                            <li class="team-leader">CPT// Johnson, P.</li>
+                                            <li>LT// Davis, A. [Demo]</li>
+                                            <li>SGT// Wilson, G. [Nav]</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="mtf-unit">
+                                    <h3>MTF Eta-10 "See No Evil"</h3>
+                                    <div class="mtf-subunit">
+                                        <h4>UNIT Eta-10.1 <span class="status-label">Available</span></h4>
+                                        <ul>
+                                            <li class="team-leader">DR// Park, H.</li>
+                                            <li>CPT// Lee, S. [Research]</li>
+                                            <li>LT// White, M. [Tech]</li>
+                                        </ul>
+                                    </div>
+                                    <div class="mtf-subunit">
+                                        <h4>UNIT Eta-10.2 <span class="status-label">Available</span></h4>
+                                        <ul>
+                                            <li class="team-leader">DR// Kim, J.</li>
+                                            <li>CPT// Brown, E. [Research]</li>
+                                            <li>LT// Green, T. [Tech]</li>
+                                        </ul>
+                                    </div>
+                                    <div class="mtf-subunit">
+                                        <h4>UNIT Eta-10.3 <span class="status-label">Available</span></h4>
+                                        <ul>
+                                            <li class="team-leader">DR// Harris, J.</li>
+                                            <li>CPT// Kim, S. [Research]</li>
+                                            <li>LT// Brown, T. [Tech]</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="mtf-unit">
+                                    <h3>MTF Lambda-12 "Pest Control"</h3>
+                                    <div class="mtf-subunit">
+                                        <h4>UNIT Lambda-12.1 <span class="status-label">Available</span></h4>
+                                        <ul>
+                                            <li class="team-leader">MAJ// Rodriguez, A.</li>
+                                            <li>CPT// Wilson, T. [Speed]</li>
+                                            <li>LT// Johnson, K. [Scout]</li>
+                                        </ul>
+                                    </div>
+                                    <div class="mtf-subunit">
+                                        <h4>UNIT Lambda-12.2 <span class="status-label">Available</span></h4>
+                                        <ul>
+                                            <li class="team-leader">CPT// Martinez, L.</li>
+                                            <li>LT// Brown, J. [Speed]</li>
+                                            <li>SGT// Davis, R. [Scout]</li>
+                                        </ul>
+                                    </div>
+                                    <div class="mtf-subunit">
+                                        <h4>UNIT Lambda-12.3 <span class="status-label">Available</span></h4>
+                                        <ul>
+                                            <li class="team-leader">CPT// Harris, K.</li>
+                                            <li>LT// Evans, D. [Speed]</li>
+                                            <li>SGT// Carter, A. [Scout]</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="mtf-unit">
+                                    <h3>MTF Mu-0 "Maxwell's Demons"</h3>
+                                    <div class="mtf-subunit">
+                                        <h4>UNIT Mu-0.1 <span class="status-label">Available</span></h4>
+                                        <ul>
+                                            <li class="team-leader">COL// Wright, P.</li>
+                                            <li>MAJ// King, R. [Air]</li>
+                                            <li>CPT// Scott, L. [Nav]</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="mtf-unit">
+                                    <h3>MTF Mu-4 "Debuggers"</h3>
+                                    <div class="mtf-subunit">
+                                        <h4>UNIT Mu-4.1 <span class="status-label">Available</span></h4>
+                                        <ul>
+                                            <li class="team-leader">COL// Wright, P.</li>
+                                            <li>MAJ// King, R. [Air]</li>
+                                            <li>CPT// Scott, L. [Nav]</li>
+                                        </ul>
+                                    </div>
+                                    <div class="mtf-subunit">
+                                        <h4>UNIT Mu-4.2 <span class="status-label">Available</span></h4>
+                                        <ul>
+                                            <li class="team-leader">CPT// Harris, M.</li>
+                                            <li>LT// Evans, J. [Air]</li>
+                                            <li>SGT// Carter, S. [Nav]</li>
+                                        </ul>
+                                    </div>
+                                    <div class="mtf-subunit">
+                                        <h4>UNIT Mu-4.3 <span class="status-label">Available</span></h4>
+                                        <ul>
+                                            <li class="team-leader">CPT// Johnson, P.</li>
+                                            <li>LT// Davis, A. [Air]</li>
+                                            <li>SGT// Wilson, G. [Nav]</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="mtf-unit">
+                                    <h3>MTF Mu-13 "Ghostbusters"</h3>
+                                    <div class="mtf-subunit">
+                                        <h4>UNIT Mu-13.1 <span class="status-label">Available</span></h4>
+                                        <ul>
+                                            <li class="team-leader">DR// Spengler, E.</li>
+                                            <li>CPT// Venkman, P. [Psych]</li>
+                                            <li>LT// Stantz, R. [Tech]</li>
+                                        </ul>
+                                    </div>
+                                    <div class="mtf-subunit">
+                                        <h4>UNIT Mu-13.2 <span class="status-label">Available</span></h4>
+                                        <ul>
+                                            <li class="team-leader">DR// Brown, H.</li>
+                                            <li>CPT// Green, L. [Psych]</li>
+                                            <li>LT// White, J. [Tech]</li>
+                                        </ul>
+                                    </div>
+                                    <div class="mtf-subunit">
+                                        <h4>UNIT Mu-13.3 <span class="status-label">Available</span></h4>
+                                        <ul>
+                                            <li class="team-leader">DR// Harris, J.</li>
+                                            <li>CPT// Kim, S. [Psych]</li>
+                                            <li>LT// Brown, T. [Tech]</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="mtf-unit">
+                                    <h3>MTF Nu-7 "Hammer Down"</h3>
+                                    <div class="mtf-subunit">
+                                        <h4>UNIT Nu-7.1 <span class="status-label">Available</span></h4>
+                                        <ul>
+                                            <li class="team-leader">MAJ// Anderson, M.</li>
+                                            <li>CPT// Phillips, S. [Infil]</li>
+                                            <li>LT// Foster, B. [Tech]</li>
+                                        </ul>
+                                    </div>
+                                    <div class="mtf-subunit">
+                                        <h4>UNIT Nu-7.2 <span class="status-label">Available</span></h4>
+                                        <ul>
+                                            <li class="team-leader">CPT// Harris, K.</li>
+                                            <li>LT// Evans, D. [Infil]</li>
+                                            <li>SGT// Carter, A. [Tech]</li>
+                                        </ul>
+                                    </div>
+                                    <div class="mtf-subunit">
+                                        <h4>UNIT Nu-7.3 <span class="status-label">Available</span></h4>
+                                        <ul>
+                                            <li class="team-leader">CPT// Johnson, P.</li>
+                                            <li>LT// Davis, A. [Infil]</li>
+                                            <li>SGT// Wilson, G. [Tech]</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="mtf-unit">
+                                    <h3>MTF Omega-1 "Law's Left Hand"</h3>
+                                    <div class="mtf-subunit">
+                                        <h4>UNIT Omega-1.1 <span class="status-label">Available</span></h4>
+                                        <ul>
+                                            <li class="team-leader">DIR// Thompson, L.</li>
+                                            <li>ADV// Mitchell, J. [Legal]</li>
+                                            <li>CPT// Turner, R. [Enforce]</li>
+                                        </ul>
+                                    </div>
+                                    <div class="mtf-subunit">
+                                        <h4>UNIT Omega-1.2 <span class="status-label">Available</span></h4>
+                                        <ul>
+                                            <li class="team-leader">DIR// Brown, E.</li>
+                                            <li>ADV// Green, T. [Legal]</li>
+                                            <li>CPT// White, S. [Enforce]</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="mtf-unit">
+                                    <h3>MTF Resh-1 "Seat of Consciousness"</h3>
+                                    <div class="mtf-subunit">
+                                        <h4>UNIT Resh-1.1 <span class="status-label">Available</span></h4>
+                                        <ul>
+                                            <li class="team-leader">DR// Cohen, I.</li>
+                                            <li>MAJ// Young, A. [Math]</li>
+                                            <li>CPT// Hall, D. [Stats]</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="mtf-unit">
+                                    <h3>MTF Kappa-10 "Skynet"</h3>
+                                    <div class="mtf-subunit">
+                                        <h4>UNIT Kappa-10.1 <span class="status-label">Available</span></h4>
+                                        <ul>
+                                            <li class="team-leader">CMD// Hughes, C.</li>
+                                            <li>MAJ// Ross, E. [Space]</li>
+                                            <li>CPT// Adams, T. [Comms]</li>
+                                        </ul>
+                                    </div>
+                                    <div class="mtf-subunit">
+                                        <h4>UNIT Kappa-10.2 <span class="status-label">Available</span></h4>
+                                        <ul>
+                                            <li class="team-leader">CMD// Brown, H.</li>
+                                            <li>MAJ// Green, J. [Space]</li>
+                                            <li>CPT// White, L. [Comms]</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="containment" class="section-content hidden">
+                            <h2>CONTAINMENT PROTOCOLS</h2>
+                            <p class="typing">Accessing MTF operational protocols and containment procedures...</p>
+                            
+                            <div class="protocol-categories">
+                                <div class="category-buttons">
+                                    <button class="protocol-category active" data-category="combat">COMBAT UNITS</button>
+                                    <button class="protocol-category" data-category="research">RESEARCH UNITS</button>
+                                    <button class="protocol-category" data-category="special">SPECIAL OPS</button>
+                                </div>
+
+                                <div class="protocol-list">
+                                    <!-- Combat Units -->
+                                    <div class="protocol-category-content" id="combat">
+                                        <div class="mtf-protocol">
+                                            <h3>MTF Resh-1 "Seat of Consciousness"</h3>
+                                            <div class="protocol-details">
+                                                <p class="mission">PRIMARY MISSION: Cognitive Anomalies</p>
+                                                <ul class="responsibilities">
+                                                    <li>Research on consciousness-affecting SCPs</li>
+                                                    <li>Containment of mind-altering anomalies</li>
+                                                    <li>Development of cognitive countermeasures</li>
+                                                </ul>
+                                                <div class="clearance-level">CLEARANCE: LEVEL 4</div>
+                                            </div>
+                                        </div>
+                                        <div class="mtf-protocol">
+                                            <h3>MTF Alpha-1 "Red Right Hand"</h3>
+                                            <div class="protocol-details">
+                                                <p class="mission">PRIMARY MISSION: O5 Protection</p>
+                                                <ul class="responsibilities">
+                                                    <li>O5 Council security</li>
+                                                    <li>High-priority missions</li>
+                                                    <li>Internal affairs investigation</li>
+                                                    <li>Special containment operations</li>
+                                                </ul>
+                                                <div class="clearance-level">CLEARANCE: LEVEL 5</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="mtf-protocol">
+                                            <h3>MTF Nu-7 "Hammer Down"</h3>
+                                            <div class="protocol-details">
+                                                <p class="mission">PRIMARY MISSION: Heavy Combat Operations</p>
+                                                <ul class="responsibilities">
+                                                    <li>Large-scale containment operations</li>
+                                                    <li>Military response to major threats</li>
+                                                    <li>Heavy weapons deployment</li>
+                                                    <li>Strategic assault coordination</li>
+                                                </ul>
+                                                <div class="clearance-level">CLEARANCE: LEVEL 4</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="mtf-protocol">
+                                            <h3>MTF Omega-1 "Law's Left Hand"</h3>
+                                            <div class="protocol-details">
+                                                <p class="mission">PRIMARY MISSION: Legal Operations</p>
+                                                <ul class="responsibilities">
+                                                    <li>Foundation law enforcement</li>
+                                                    <li>Internal investigations</li>
+                                                    <li>Regulatory compliance</li>
+                                                    <li>Legal documentation</li>
+                                                </ul>
+                                                <div class="clearance-level">CLEARANCE: LEVEL 4</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Research Units -->
+                                    <div class="protocol-category-content hidden" id="research">
+                                        <div class="mtf-protocol">
+                                            <h3>MTF Mu-13 "Ghostbusters"</h3>
+                                            <div class="protocol-details">
+                                                <p class="mission">PRIMARY MISSION: Spectral Entities</p>
+                                                <ul class="responsibilities">
+                                                    <li>Paranormal investigation</li>
+                                                    <li>Spectral containment</li>
+                                                    <li>Ectoplasmic research</li>
+                                                    <li>Non-physical entity handling</li>
+                                                </ul>
+                                                <div class="clearance-level">CLEARANCE: LEVEL 3</div>
+                                            </div>
+                                        </div>
+                                        <div class="mtf-protocol">
+                                            <h3>MTF Mu-0 "Maxwell's Demons"</h3>
+                                            <div class="protocol-details">
+                                                <p class="mission">PRIMARY MISSION: Demonology</p>
+                                                <ul class="responsibilities">
+                                                    <li>Containment of demon-related anomalies</li>
+                                                    <li>Research on demonology</li>
+                                                    <li>Special operations involving demonic entities</li>
+                                                </ul>
+                                                <div class="clearance-level">CLEARANCE: LEVEL 4</div>
+                                            </div>
+                                        </div>
+                                        <div class="mtf-protocol">
+                                            <h3>MTF Zeta-9 "Mole Rats"</h3>
+                                            <div class="protocol-details">
+                                                <p class="mission">PRIMARY MISSION: Underground Operations</p>
+                                                <ul class="responsibilities">
+                                                    <li>Exploration of subterranean anomalies</li>
+                                                    <li>Containment in confined spaces</li>
+                                                    <li>Structural integrity assessments</li>
+                                                </ul>
+                                                <div class="clearance-level">CLEARANCE: LEVEL 3</div>
+                                            </div>
+                                        </div>
+                                        <div class="mtf-protocol">
+                                            <h3>MTF Eta-10 "See No Evil"</h3>
+                                            <div class="protocol-details">
+                                                <p class="mission">PRIMARY MISSION: Visual Anomalies</p>
+                                                <ul class="responsibilities">
+                                                    <li>Containment of visual cognitohazards</li>
+                                                    <li>Research on visual memetic agents</li>
+                                                    <li>Handling of perception-altering SCPs</li>
+                                                </ul>
+                                                <div class="clearance-level">CLEARANCE: LEVEL 3</div>
+                                            </div>
+                                        </div>
+                                        <div class="mtf-protocol">
+                                            <h3>MTF Beta-7 "Maz Hatters"</h3>
+                                            <div class="protocol-details">
+                                                <p class="mission">PRIMARY MISSION: CBRN Research</p>
+                                                <ul class="responsibilities">
+                                                    <li>Hazardous anomaly containment</li>
+                                                    <li>Chemical and biological threat analysis</li>
+                                                    <li>Decontamination procedures</li>
+                                                    <li>Environmental impact assessment</li>
+                                                </ul>
+                                                <div class="clearance-level">CLEARANCE: LEVEL 4</div>
+                                            </div>
+                                        </div>
+                                        <div class="mtf-protocol">
+                                            <h3>MTF Lambda-12 "Pest Control"</h3>
+                                            <div class="protocol-details">
+                                                <p class="mission">PRIMARY MISSION: Biological Anomalies</p>
+                                                <ul class="responsibilities">
+                                                    <li>Containment of anomalous organisms</li>
+                                                    <li>Eradication of biological threats</li>
+                                                    <li>Management of SCP infestations</li>
+                                                </ul>
+                                                <div class="clearance-level">CLEARANCE: LEVEL 3</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Special Ops -->
+
+                                    <div class="protocol-category-content hidden" id="special">
+                                        <div class="mtf-protocol">
+                                            <h3>MTF Epsilon-11 "Nine-Tailed Fox"</h3>
+                                            <div class="protocol-details">
+                                                <p class="mission">PRIMARY MISSION: Internal Security</p>
+                                                <ul class="responsibilities">
+                                                    <li>Site security and containment breach response</li>
+                                                    <li>Personnel rescue operations</li>
+                                                    <li>Facility recontainment procedures</li>
+                                                    <li>Emergency response coordination</li>
+                                                </ul>
+                                                <div class="clearance-level">CLEARANCE: LEVEL 3</div>
+                                            </div>
+                                        </div>
+                                        <div class="mtf-protocol">
+                                            <h3>MTF Mu-4 "Debuggers"</h3>
+                                            <div class="protocol-details">
+                                                <p class="mission">PRIMARY MISSION: Digital Anomalies</p>
+                                                <ul class="responsibilities">
+                                                    <li>Containment of digital SCPs</li>
+                                                    <li>Cybersecurity operations</li>
+                                                    <li>Neutralization of digital threats</li>
+                                                    <li>Research on digital anomalies</li>
+                                                </ul>
+                                                <div class="clearance-level">CLEARANCE: LEVEL 4</div>
+                                            </div>
+                                        </div>
+                                        <div class="mtf-protocol">
+                                            <h3>MTF Gamma-5 "Red Herrings"</h3>
+                                            <div class="protocol-details">
+                                                <p class="mission">PRIMARY MISSION: Information Control</p>
+                                                <ul class="responsibilities">
+                                                    <li>Disinformation campaigns</li>
+                                                    <li>Cover story implementation</li>
+                                                    <li>Media manipulation</li>
+                                                    <li>Public record alteration</li>
+                                                </ul>
+                                                <div class="clearance-level">CLEARANCE: LEVEL 4</div>
+                                            </div>
+                                        </div>
+                                        <div class="mtf-protocol">
+                                            <h3>MTF Alpha-9 "Last Hope"</h3>
+                                            <div class="protocol-details">
+                                                <p class="mission">PRIMARY MISSION: Anomalous Assistance</p>
+                                                <ul class="responsibilities">
+                                                    <li>Utilization of anomalous individuals</li>
+                                                    <li>Combat and containment support</li>
+                                                    <li>Special operations involving SCPs</li>
+                                                </ul>
+                                                <div class="clearance-level">CLEARANCE: LEVEL 4</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="mtf-protocol">
+                                            <h3>MTF Kappa-10 "Skynet"</h3>
+                                            <div class="protocol-details">
+                                                <p class="mission">PRIMARY MISSION: AI and Technology</p>
+                                                <ul class="responsibilities">
+                                                    <li>Containment of AI anomalies</li>
+                                                    <li>Neutralization of digital threats</li>
+                                                    <li>Advanced technology management</li>
+                                                </ul>
+                                                <div class="clearance-level">CLEARANCE: LEVEL 4</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="security" class="section-content hidden">
+                            <h2>SECURITY SYSTEMS</h2>
+                            <p class="typing">Monitoring facility security...</p>
+                            
+                            <div class="security-overview">
+                                <div class="security-grid">
+                                    <div class="security-status">
+                                        <h3>SECTOR A: SECURE</h3>
+                                        <div class="status-details">
+                                            <p>Containment Units: OPERATIONAL</p>
+                                            <p>Personnel Count: 247</p>
+                                            <p>Threat Level: LOW</p>
+                                            <div class="security-meters">
+                                                <div class="meter">Power: 100%</div>
+                                                <div class="meter">Shield: 100%</div>
+                                                <div class="meter">Scrubbers: 100%</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="security-status">
+                                        <h3>SECTOR B: SECURE</h3>
+                                        <div class="status-details">
+                                            <p>Containment Units: OPERATIONAL</p>
+                                            <p>Personnel Count: 183</p>
+                                            <p>Threat Level: LOW</p>
+                                            <div class="security-meters">
+                                                <div class="meter">Power: 100%</div>
+                                                <div class="meter">Shield: 100%</div>
+                                                <div class="meter">Scrubbers: 100%</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="security-status">
+                                        <h3>SECTOR C: SECURE</h3>
+                                        <div class="status-details">
+                                            <p>Containment Units: OPERATIONAL</p>
+                                            <p>Personnel Count: 115</p>
+                                            <p>Threat Level: LOW</p>
+                                            <div class="security-meters">
+                                                <div class="meter">Power: 100%</div>
+                                                <div class="meter">Shield: 100%</div>
+                                                <div class="meter">Scrubbers: 100%</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="facility-metrics">
+                                    <div class="metric-column">
+                                        <h4>CONTAINMENT SYSTEMS</h4>
+                                        <table class="metrics-table">
+                                            <tr><td>Magnetic Seals</td><td class="status-ok">ACTIVE</td><td>100%</td></tr>
+                                            <tr><td>Psionic Dampeners</td><td class="status-ok">ACTIVE</td><td>100%</td></tr>
+                                            <tr><td>Reality Anchors</td><td class="status-ok">ACTIVE</td><td>100%</td></tr>
+                                            <tr><td>Bio-Hazard Filters</td><td class="status-ok">ACTIVE</td><td>100%</td></tr>
+                                        </table>
+                                    </div>
+
+                                    <div class="metric-column">
+                                        <h4>DEFENSE GRID</h4>
+                                        <table class="metrics-table">
+                                            <tr><td>Automated Turrets</td><td class="status-ok">ARMED</td><td>32/32</td></tr>
+                                            <tr><td>Tesla Gates</td><td class="status-ok">CHARGED</td><td>16/16</td></tr>
+                                            <tr><td>Blast Doors</td><td class="status-ok">SEALED</td><td>24/24</td></tr>
+                                            <tr><td>Gas Systems</td><td class="status-ok">READY</td><td>100%</td></tr>
+                                        </table>
+                                    </div>
+
+                                    <div class="metric-column">
+                                        <h4>EMERGENCY SYSTEMS</h4>
+                                        <table class="metrics-table">
+                                            <tr><td>Backup Power</td><td class="status-ok">STANDBY</td><td>100%</td></tr>
+                                            <tr><td>Evacuation Routes</td><td class="status-ok">CLEAR</td><td>12/12</td></tr>
+                                            <tr><td>Medical Response</td><td class="status-ok">READY</td><td>8 TEAMS</td></tr>
+                                            <tr><td>Fire Suppression</td><td class="status-ok">ARMED</td><td>100%</td></tr>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <div class="active-alerts">
+                                    <h4>CURRENT ALERTS</h4>
+                                    <div class="alert-scroll">
+                                        <div class="alert-item info">
+                                            <span class="timestamp">[23:45:00]</span>
+                                            <span class="alert-text">ALL SYSTEMS NOMINAL - NO ACTIVE ALERTS</span>
+                                        </div>
+                                        <div class="alert-item info">
+                                            <span class="timestamp">[23:30:00]</span>
+                                            <span class="alert-text">SCHEDULED MAINTENANCE COMPLETED - ALL SECTORS</span>
+                                        </div>
+                                        <div class="alert-item info">
+                                            <span class="timestamp">[23:15:00]</span>
+                                            <span class="alert-text">SECURITY SCAN COMPLETE - NO ANOMALIES DETECTED</span>
+                                        </div>
+                                        <div class="alert-item info">
+                                            <span class="timestamp">[23:00:00]</span>
+                                            <span class="alert-text">SHIFT CHANGE COMPLETED - ALL POSTS MANNED</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="security-controls">
+                                    <h4>EMERGENCY PROTOCOLS</h4>
+                                    <div class="control-grid">
+                                        <button class="control-button" disabled>INITIATE LOCKDOWN</button>
+                                        <button class="control-button" disabled>ACTIVATE PURGE</button>
+                                        <button class="control-button" disabled>EMERGENCY EVAC</button>
+                                        <button class="control-button" disabled>DETONATE ALPHA WARHEADS</button>
+                                    </div>
+                                    <p class="clearance-warning">REQUIRES O5 OR SITE DIRECTOR CLEARANCE</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="settings" class="section-content hidden">
+                            <h2>SYSTEM SETTINGS</h2>
+                            <p class="typing">System configuration access...</p>
+                            <div class="settings-list">
+                                <p>Security Level: 4</p>
+                                <p>Protocol Version: 2.3.1</p>
+                                <p>Last Update: [REDACTED]</p>
+                            </div>
+                        </div>
+
+                        <div id="help" class="section-content hidden">
+                            <h2>REPORT CREATION GUIDE</h2>
+                            <p class="typing">[ACCESSING DOCUMENTATION...]</p>
+                            
+                            <div class="help-section">
+                                <h3 class="help-title">MISSION DETAILS</h3>
+                                <div class="help-content">
+                                    <p class="field-desc"><span class="field-name">MISSION DESIGNATION:</span> Format: OP-[YEAR]-[NUMBER] (e.g., OP-2023-001)</p>
+                                    <p class="field-desc"><span class="field-name">PRIORITY LEVEL:</span> Select based on immediate threat level to human life and containment stability</p>
+                                    <p class="field-desc"><span class="field-name">OPERATION TYPE:</span> Choose the most relevant category for proper resource allocation</p>
+                                </div>
+                            </div>
+
+                            <div class="help-section">
+                                <h3 class="help-title">LOCATION DATA</h3>
+                                <div class="help-content">
+                                    <p class="field-desc"><span class="field-name">LOCATION:</span> Use official city and country names in CAPS</p>
+                                    <p class="field-desc"><span class="field-name">GPS COORDINATES:</span> Format: XX.XXXXX, YY.YYYYY (decimal degrees)</p>
+                                    <p class="field-desc"><span class="field-name">DETAILED ADDRESS:</span> Include all relevant landmarks and access points</p>
+                                </div>
+                            </div>
+
+                            <div class="help-section">
+                                <h3 class="help-title">MTF DEPLOYMENT</h3>
+                                <div class="help-content">
+                                    <p class="field-desc"><span class="field-name">PRIMARY MTF UNIT:</span> Select based on anomaly type and required expertise</p>
+                                    <p class="field-desc"><span class="field-name">SUPPORT UNITS:</span> Multiple selections allowed based on mission complexity</p>
+                                    <div class="mtf-guide">
+                                        <h4>RECOMMENDED MTF SELECTION GUIDE:</h4>
+                                        <ul>
+                                            <li>Cognitive/Mental Anomalies → Resh-1</li>
+                                            <li>High-Level Security → Alpha-1</li>
+                                            <li>Breach Response → Epsilon-11</li>
+                                            <li>Paranormal Activity → Mu-13</li>
+                                            <li>Digital Threats → Mu-4</li>
+                                            <li>Biological Hazards → Beta-7</li>
+                                            <li>Underground Ops → Zeta-9</li>
+                                            <li>Heavy Combat → Nu-7</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="help-section">
+                                <h3 class="help-title">MISSION PARAMETERS</h3>
+                                <div class="help-content">
+                                    <p class="field-desc"><span class="field-name">ESTIMATED DURATION:</span> Format: XX HOURS or XX DAYS</p>
+                                    <p class="field-desc"><span class="field-name">THREAT LEVEL:</span> Assess based on potential casualties and containment breach risk</p>
+                                    <p class="field-desc"><span class="field-name">MISSION OBJECTIVES:</span> List primary and secondary objectives in order of priority</p>
+                                </div>
+                            </div>
+
+                            <div class="help-section">
+                                <h3 class="help-title">RESOURCE ALLOCATION</h3>
+                                <div class="help-content">
+                                    <p class="field-desc"><span class="field-name">REQUIRED PERSONNEL:</span> Total number of field agents needed</p>
+                                    <p class="field-desc"><span class="field-name">EQUIPMENT LEVEL:</span> Based on anomaly threat level and containment requirements</p>
+                                    <p class="field-desc"><span class="field-name">SPECIAL REQUIREMENTS:</span> List any specific equipment, vehicles, or resources</p>
+                                </div>
+                            </div>
+
+                            <div class="help-section">
+                                <h3 class="help-title">AUTHORIZATION</h3>
+                                <div class="help-content">
+                                    <p class="field-desc"><span class="field-name">REQUESTING OFFICER:</span> Format: RANK// LASTNAME, F.</p>
+                                    <p class="field-desc"><span class="field-name">CLEARANCE LEVEL:</span> Automatically set based on login credentials</p>
+                                    <p class="field-desc"><span class="field-name">AUTHORIZATION CODE:</span> Format: XXXX-XXXX-XXXX (provided by command)</p>
+                                </div>
+                            </div>
+
+                            <div class="help-section warning">
+                                <h3 class="help-title">IMPORTANT NOTES</h3>
+                                <div class="help-content">
+                                    <ul class="warning-list">
+                                        <li>All fields are mandatory unless marked optional</li>
+                                        <li>Use CAPS for all text entries</li>
+                                        <li>Submit reports immediately for time-sensitive situations</li>
+                                        <li>Verify all coordinates and location data before submission</li>
+                                        <li>Cross-reference MTF availability before assignment</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="terminal-footer">
+            <div class="status">CLEARANCE LEVEL 4 - FULL ACCESS GRANTED</div>
+            <div class="timestamp">SYSTEM TIME: <span id="system-time"></span></div>
+        </div>
+    </div>
+
+    <script>
+        // Update system time
+        function updateTime() {
+            const now = new Date();
+            document.getElementById('system-time').textContent = 
+                now.toLocaleTimeString('en-US', { hour12: false });
+        }
+        setInterval(updateTime, 1000);
+        updateTime();
+
+        document.getElementById('login-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Your existing authentication logic...
+            
+            // Select random PDF before redirecting
+            selectRandomPDF();
+            window.location.href = './root/reports-editor.html';
+        });
+    </script>
+</body>
+</html>

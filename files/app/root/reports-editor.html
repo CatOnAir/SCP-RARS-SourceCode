@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCP Reports Editor</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="../scripts/ReportScript.js" defer></script>
+</head>
+<body>
+    <div class="terminal-container fade-in">
+        <div class="header">
+            <div class="scp-logo">SCP Foundation</div>
+            <div class="classification">REPORTS MANAGEMENT SYSTEM</div>
+        </div>
+        
+        <div class="main-content">
+            <div class="terminal-window appear">
+                <div class="terminal-header">
+                    <span class="terminal-title">REPORTS EDITOR</span>
+                    <a href="./index.html" class="return-button">RETURN TO MAIN TERMINAL</a>
+                </div>
+                <div class="terminal-body">
+                    <div class="boot-sequence">
+                        <p class="typing">>_ ACCESSING REPORTS DATABASE</p>
+                        <p class="typing">>_ CLEARANCE VERIFIED</p>
+                        <p class="typing">>_ EDITOR INTERFACE READY</p>
+                        <p class="typing pdf-link">
+                            <a class="terminal-link" href="PDFFiles/Mission1.pdf" download>CLICK HERE TO DOWNLOAD REQUEST AS PDF</a>
+                            <!-- <button onclick="downloadPDF()" class="terminal-link">>_ CLICK HERE TO DOWNLOAD REQUEST AS PDF</button> -->
+                        </p>
+                    </div>
+                    
+                    <div class="editor-content">
+                        <form class="mission-report-form">
+                            <div class="form-section">
+                                <h3 class="section-title">MISSION DETAILS</h3>
+                                <div class="form-grid">
+                                    <div class="form-group">
+                                        <label>MISSION DESIGNATION:</label>
+                                        <input type="text" class="terminal-input" placeholder="OP-XXXXX">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>PRIORITY LEVEL:</label>
+                                        <select class="terminal-input">
+                                            <option value="5">LEVEL 5 - IMMEDIATE ACTION REQUIRED</option>
+                                            <option value="4">LEVEL 4 - HIGH PRIORITY</option>
+                                            <option value="3">LEVEL 3 - STANDARD PRIORITY</option>
+                                            <option value="2">LEVEL 2 - LOW PRIORITY</option>
+                                            <option value="1">LEVEL 1 - ROUTINE</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group full-width">
+                                        <label>OPERATION TYPE:</label>
+                                        <select class="terminal-input">
+                                            <option value="">SELECT OPERATION TYPE</option>
+                                            <option value="SPEC-COVER">OTHERS/UNCLEAR</option>
+                                            <optgroup label="CONTAINMENT OPERATIONS">
+                                                <option value="CONTAIN-BREACH">CONTAINMENT BREACH RESPONSE</option>
+                                                <option value="CONTAIN-INITIAL">INITIAL CONTAINMENT PROCEDURE</option>
+                                                <option value="CONTAIN-TRANSFER">SCP TRANSFER OPERATION</option>
+                                                <option value="CONTAIN-SECURE">SECURITY PERIMETER ESTABLISHMENT</option>
+                                            </optgroup>
+                                            <optgroup label="RECOVERY OPERATIONS">
+                                                <option value="REC-ARTIFACT">ANOMALOUS ARTIFACT RECOVERY</option>
+                                                <option value="REC-ENTITY">ENTITY ACQUISITION</option>
+                                                <option value="REC-TECH">TECHNOLOGICAL ANOMALY RETRIEVAL</option>
+                                                <option value="REC-BIO">BIOLOGICAL SPECIMEN COLLECTION</option>
+                                            </optgroup>
+                                            <optgroup label="INVESTIGATION">
+                                                <option value="INV-PARANORMAL">PARANORMAL ACTIVITY ASSESSMENT</option>
+                                                <option value="INV-TEMPORAL">TEMPORAL ANOMALY INVESTIGATION</option>
+                                                <option value="INV-SPATIAL">SPATIAL DISTORTION ANALYSIS</option>
+                                                <option value="INV-COGNITOHAZARD">COGNITOHAZARD EVALUATION</option>
+                                            </optgroup>
+                                            <optgroup label="SURVEILLANCE">
+                                                <option value="SURV-COVERT">COVERT OBSERVATION MISSION</option>
+                                                <option value="SURV-ENTITY">ENTITY TRACKING OPERATION</option>
+                                                <option value="SURV-SITE">SITE MONITORING ASSIGNMENT</option>
+                                                <option value="SURV-POI">PERSON OF INTEREST SURVEILLANCE</option>
+                                            </optgroup>
+                                            <optgroup label="NEUTRALIZATION">
+                                                <option value="NEUT-HOSTILE">HOSTILE ENTITY NEUTRALIZATION</option>
+                                                <option value="NEUT-HAZARD">ENVIRONMENTAL HAZARD ELIMINATION</option>
+                                                <option value="NEUT-DEVICE">ANOMALOUS DEVICE DEACTIVATION</option>
+                                                <option value="NEUT-EFFECT">ANOMALOUS EFFECT SUPPRESSION</option>
+                                            </optgroup>
+                                            <optgroup label="RESEARCH OPERATIONS">
+                                                <option value="RES-FIELD">FIELD RESEARCH EXPEDITION</option>
+                                                <option value="RES-TEST">CONTROLLED TESTING OPERATION</option>
+                                                <option value="RES-ANALYSIS">ON-SITE ANALYSIS MISSION</option>
+                                                <option value="RES-INTERVIEW">ANOMALOUS SUBJECT INTERVIEW</option>
+                                            </optgroup>
+                                            <optgroup label="EMERGENCY RESPONSE">
+                                                <option value="EMER-EVAC">EMERGENCY EVACUATION</option>
+                                                <option value="EMER-CONTAIN">EMERGENCY CONTAINMENT</option>
+                                                <option value="EMER-RESCUE">PERSONNEL RESCUE OPERATION</option>
+                                                <option value="EMER-LOCKDOWN">SITE LOCKDOWN PROTOCOL</option>
+                                            </optgroup>
+                                            <optgroup label="SPECIAL OPERATIONS">
+                                                <option value="SPEC-INTEL">INTELLIGENCE GATHERING</option>
+                                                <option value="SPEC-INFIL">INFILTRATION MISSION</option>
+                                                <option value="SPEC-EXFIL">EXFILTRATION OPERATION</option>
+                                                <option value="SPEC-COVER">COVER STORY IMPLEMENTATION</option>
+                                            </optgroup>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-section">
+                                <h3 class="section-title">LOCATION DATA</h3>
+                                <div class="form-grid">
+                                    <div class="form-group">
+                                        <label>LOCATION:</label>
+                                        <input type="text" class="terminal-input" placeholder="CITY, COUNTRY">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>GPS COORDINATES:</label>
+                                        <input type="text" class="terminal-input" placeholder="XX.XXXXX, YY.YYYY">
+                                    </div>
+                                    <div class="form-group full-width">
+                                        <label>DETAILED ADDRESS:</label>
+                                        <textarea class="terminal-input" rows="2" placeholder="FULL ADDRESS DETAILS"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-section">
+                                <h3 class="section-title">MTF DEPLOYMENT</h3>
+                                <div class="deployment-container">
+                                    <!-- Filter Dropdown -->
+                                    <div class="filter-container">
+                                        <select class="terminal-input mtf-filter" id="mtfFilter">
+                                            <option value="all">ALL UNITS</option>
+                                            <optgroup label="ALPHA UNITS">
+                                                <option value="alpha-1">Alpha-1 "Red Right Hand"</option>
+                                                <option value="alpha-9">Alpha-9 "Last Hope"</option>
+                                            </optgroup>
+                                            <optgroup label="BETA UNITS">
+                                                <option value="beta-7">Beta-7 "Maz Hatters"</option>
+                                            </optgroup>
+                                            <optgroup label="GAMMA UNITS">
+                                                <option value="gamma-5">Gamma-5 "Red Herrings"</option>
+                                            </optgroup>
+                                            <optgroup label="EPSILON UNITS">
+                                                <option value="epsilon-6">Epsilon-6 "Village Idiots"</option>
+                                                <option value="epsilon-11">Epsilon-11 "Nine-Tailed Fox"</option>
+                                            </optgroup>
+                                            <optgroup label="ZETA UNITS">
+                                                <option value="zeta-9">Zeta-9 "Mole Rats"</option>
+                                            </optgroup>
+                                            <optgroup label="ETA UNITS">
+                                                <option value="eta-10">Eta-10 "See No Evil"</option>
+                                            </optgroup>
+                                            <optgroup label="LAMBDA UNITS">
+                                                <option value="lambda-12">Lambda-12 "Pest Control"</option>
+                                            </optgroup>
+                                            <optgroup label="MU UNITS">
+                                                <option value="mu-0">Mu-0 "Maxwell's Demons"</option>
+                                                <option value="mu-4">Mu-4 "Debuggers"</option>
+                                                <option value="mu-13">Mu-13 "Ghostbusters"</option>
+                                            </optgroup>
+                                            <optgroup label="NU UNITS">
+                                                <option value="nu-7">Nu-7 "Hammer Down"</option>
+                                            </optgroup>
+                                            <optgroup label="OMEGA UNITS">
+                                                <option value="omega-1">Omega-1 "Law's Left Hand"</option>
+                                            </optgroup>
+                                            <optgroup label="RESH UNITS">
+                                                <option value="resh-1">Resh-1 "Seat of Consciousness"</option>
+                                            </optgroup>
+                                            <optgroup label="KAPPA UNITS">
+                                                <option value="kappa-10">Kappa-10 "Skynet"</option>
+                                            </optgroup>
+                                        </select>
+                                    </div>
+
+                                    <!-- Available Units List -->
+                                    <div class="mtf-list-container">
+                                        <h4>AVAILABLE UNITS</h4>
+                                        <div class="mtf-list" id="availableUnits">
+                                            <!-- Alpha Units -->
+                                            <div class="mtf-category" data-category="alpha-1">
+                                                <div class="mtf-item clickable" data-unit="alpha-1">UNIT Alpha-1.1 "Red Right Hand"</div>
+                                                <div class="mtf-item clickable" data-unit="alpha-1">UNIT Alpha-1.2 "Red Right Hand"</div>
+                                                <div class="mtf-item clickable" data-unit="alpha-1">UNIT Alpha-1.3 "Red Right Hand"</div>
+                                            </div>
+                                            <div class="mtf-category" data-category="alpha-9">
+                                                <div class="mtf-item clickable" data-unit="alpha-9">UNIT Alpha-9.1 "Last Hope"</div>
+                                                <div class="mtf-item clickable" data-unit="alpha-9">UNIT Alpha-9.2 "Last Hope"</div>
+                                                <div class="mtf-item clickable" data-unit="alpha-9">UNIT Alpha-9.3 "Last Hope"</div>
+                                            </div>
+
+                                            <!-- Beta Units -->
+                                            <div class="mtf-category" data-category="beta-7">
+                                                <div class="mtf-item clickable" data-unit="beta-7">UNIT Beta-7.1 "Maz Hatters"</div>
+                                                <div class="mtf-item clickable" data-unit="beta-7">UNIT Beta-7.2 "Maz Hatters"</div>
+                                                <div class="mtf-item clickable" data-unit="beta-7">UNIT Beta-7.3 "Maz Hatters"</div>
+                                            </div>
+
+                                            <!-- Gamma Units -->
+                                            <div class="mtf-category" data-category="gamma-5">
+                                                <div class="mtf-item clickable" data-unit="gamma-5">UNIT Gamma-5.1 "Red Herrings"</div>
+                                                <div class="mtf-item clickable" data-unit="gamma-5">UNIT Gamma-5.2 "Red Herrings"</div>
+                                                <div class="mtf-item clickable" data-unit="gamma-5">UNIT Gamma-5.3 "Red Herrings"</div>
+                                            </div>
+
+                                            <!-- Epsilon Units -->
+                                            <div class="mtf-category" data-category="epsilon-6">
+                                                <div class="mtf-item clickable" data-unit="epsilon-6">UNIT Epsilon-6.1 "Village Idiots"</div>
+                                                <div class="mtf-item clickable" data-unit="epsilon-6">UNIT Epsilon-6.2 "Village Idiots"</div>
+                                                <div class="mtf-item clickable" data-unit="epsilon-6">UNIT Epsilon-6.3 "Village Idiots"</div>
+                                            </div>
+                                            <div class="mtf-category" data-category="epsilon-11">
+                                                <div class="mtf-item clickable" data-unit="epsilon-11">UNIT Epsilon-11.1 "Nine-Tailed Fox"</div>
+                                                <div class="mtf-item clickable" data-unit="epsilon-11">UNIT Epsilon-11.2 "Nine-Tailed Fox"</div>
+                                                <div class="mtf-item clickable" data-unit="epsilon-11">UNIT Epsilon-11.3 "Nine-Tailed Fox"</div>
+                                            </div>
+
+                                            <!-- Zeta Units -->
+                                            <div class="mtf-category" data-category="zeta-9">
+                                                <div class="mtf-item clickable" data-unit="zeta-9">UNIT Zeta-9.1 "Mole Rats"</div>
+                                                <div class="mtf-item clickable" data-unit="zeta-9">UNIT Zeta-9.2 "Mole Rats"</div>
+                                                <div class="mtf-item clickable" data-unit="zeta-9">UNIT Zeta-9.3 "Mole Rats"</div>
+                                            </div>
+
+                                            <!-- Eta Units -->
+                                            <div class="mtf-category" data-category="eta-10">
+                                                <div class="mtf-item clickable" data-unit="eta-10">UNIT Eta-10.1 "See No Evil"</div>
+                                                <div class="mtf-item clickable" data-unit="eta-10">UNIT Eta-10.2 "See No Evil"</div>
+                                                <div class="mtf-item clickable" data-unit="eta-10">UNIT Eta-10.3 "See No Evil"</div>
+                                            </div>
+
+                                            <!-- Lambda Units -->
+                                            <div class="mtf-category" data-category="lambda-12">
+                                                <div class="mtf-item clickable" data-unit="lambda-12">UNIT Lambda-12.1 "Pest Control"</div>
+                                                <div class="mtf-item clickable" data-unit="lambda-12">UNIT Lambda-12.2 "Pest Control"</div>
+                                                <div class="mtf-item clickable" data-unit="lambda-12">UNIT Lambda-12.3 "Pest Control"</div>
+                                            </div>
+
+                                            <!-- Mu Units -->
+                                            <div class="mtf-category" data-category="mu-0">
+                                                <div class="mtf-item clickable" data-unit="mu-0">UNIT Mu-0.1 "Maxwell's Demons"</div>
+                                            </div>
+                                            <div class="mtf-category" data-category="mu-4">
+                                                <div class="mtf-item clickable" data-unit="mu-4">UNIT Mu-4.1 "Debuggers"</div>
+                                                <div class="mtf-item clickable" data-unit="mu-4">UNIT Mu-4.2 "Debuggers"</div>
+                                                <div class="mtf-item clickable" data-unit="mu-4">UNIT Mu-4.3 "Debuggers"</div>
+                                            </div>
+                                            <div class="mtf-category" data-category="mu-13">
+                                                <div class="mtf-item clickable" data-unit="mu-13">UNIT Mu-13.1 "Ghostbusters"</div>
+                                                <div class="mtf-item clickable" data-unit="mu-13">UNIT Mu-13.2 "Ghostbusters"</div>
+                                                <div class="mtf-item clickable" data-unit="mu-13">UNIT Mu-13.3 "Ghostbusters"</div>
+                                            </div>
+
+                                            <!-- Nu Units -->
+                                            <div class="mtf-category" data-category="nu-7">
+                                                <div class="mtf-item clickable" data-unit="nu-7">UNIT Nu-7.1 "Hammer Down"</div>
+                                                <div class="mtf-item clickable" data-unit="nu-7">UNIT Nu-7.2 "Hammer Down"</div>
+                                                <div class="mtf-item clickable" data-unit="nu-7">UNIT Nu-7.3 "Hammer Down"</div>
+                                            </div>
+
+                                            <!-- Omega Units -->
+                                            <div class="mtf-category" data-category="omega-1">
+                                                <div class="mtf-item clickable" data-unit="omega-1">UNIT Omega-1.1 "Law's Left Hand"</div>
+                                                <div class="mtf-item clickable" data-unit="omega-1">UNIT Omega-1.2 "Law's Left Hand"</div>
+                                            </div>
+
+                                            <!-- Resh Units -->
+                                            <div class="mtf-category" data-category="resh-1">
+                                                <div class="mtf-item clickable" data-unit="resh-1">UNIT Resh-1.1 "Seat of Consciousness"</div>
+                                            </div>
+
+                                            <!-- Kappa Units -->
+                                            <div class="mtf-category" data-category="kappa-10">
+                                                <div class="mtf-item clickable" data-unit="kappa-10">UNIT Kappa-10.1 "Skynet"</div>
+                                                <div class="mtf-item clickable" data-unit="kappa-10">UNIT Kappa-10.2 "Skynet"</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Assigned Units List -->
+                                    <div class="mtf-list-container">
+                                        <h4>ASSIGNED UNITS</h4>
+                                        <div class="mtf-list" id="assignedUnits">
+                                            <div class="empty-message">NO UNITS CURRENTLY ASSIGNED</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-section">
+                                <h3 class="section-title">MISSION PARAMETERS</h3>
+                                <div class="form-grid">
+                                    <div class="form-group">
+                                        <label>ESTIMATED DURATION:</label>
+                                        <input type="text" class="terminal-input" placeholder="XX HOURS">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>THREAT LEVEL:</label>
+                                        <select class="terminal-input">
+                                            <option value="5">LEVEL 5 - CRITICAL</option>
+                                            <option value="4">LEVEL 4 - SEVERE</option>
+                                            <option value="3">LEVEL 3 - MODERATE</option>
+                                            <option value="2">LEVEL 2 - LOW</option>
+                                            <option value="1">LEVEL 1 - MINIMAL</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group full-width">
+                                        <label>MISSION OBJECTIVES:</label>
+                                        <textarea class="terminal-input" rows="4" placeholder="DETAIL PRIMARY AND SECONDARY OBJECTIVES"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-section">
+                                <h3 class="section-title">RESOURCE ALLOCATION</h3>
+                                <div class="form-grid">
+                                    <div class="form-group">
+                                        <label>REQUIRED PERSONNEL:</label>
+                                        <input type="number" class="terminal-input" placeholder="XX">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>EQUIPMENT LEVEL:</label>
+                                        <select class="terminal-input">
+                                            <option value="5">LEVEL 5 - SPECIALIZED</option>
+                                            <option value="4">LEVEL 4 - HEAVY</option>
+                                            <option value="3">LEVEL 3 - STANDARD</option>
+                                            <option value="2">LEVEL 2 - LIGHT</option>
+                                            <option value="1">LEVEL 1 - MINIMAL</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group full-width">
+                                        <label>SPECIAL REQUIREMENTS:</label>
+                                        <textarea class="terminal-input" rows="3" placeholder="LIST ANY SPECIAL EQUIPMENT OR RESOURCES NEEDED"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-section">
+                                <h3 class="section-title">AUTHORIZATION</h3>
+                                <div class="form-grid">
+                                    <div class="form-group">
+                                        <label>REQUESTING OFFICER:</label>
+                                        <input type="text" class="terminal-input" placeholder="NAME AND RANK">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>CLEARANCE LEVEL:</label>
+                                        <input type="text" class="terminal-input" placeholder="LEVEL X" disabled value="LEVEL 4">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>AUTHORIZATION CODE:</label>
+                                        <input type="text" class="terminal-input" placeholder="XXXX-XXXX-XXXX">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="submit" class="terminal-button">SUBMIT REPORT</button>
+                                <button type="reset" class="terminal-button warning">CLEAR FORM</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="terminal-footer">
+            <div class="status">EDIT MODE - FULL ACCESS GRANTED</div>
+            <div class="timestamp">SYSTEM TIME: <span id="system-time"></span></div>
+        </div>
+    </div>
+
+    <div class="submit-overlay" id="submitOverlay">
+        <div class="submit-popup">
+            <div class="submit-content">
+                <h2>REPORT SUBMISSION IN PROGRESS</h2>
+                <div class="processing-sequence">
+                    <p class="typing">>_ VALIDATING REPORT DATA...</p>
+                    <p class="typing">>_ ENCRYPTING SENSITIVE INFORMATION...</p>
+                    <p class="typing">>_ ESTABLISHING SECURE CONNECTION...</p>
+                    <p class="typing">>_ UPLOADING TO CENTRAL DATABASE...</p>
+                    <p class="typing success">>_ SUBMISSION SUCCESSFUL</p>
+                </div>
+                <button class="terminal-button" id="proceedToAssessment">PROCEED TO ASSESSMENT</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Update system time
+        function updateTime() {
+            const now = new Date();
+            document.getElementById('system-time').textContent = 
+                now.toLocaleTimeString('en-US', { hour12: false });
+        }
+        setInterval(updateTime, 1000);
+        updateTime();
+
+        // MTF Unit movement and filtering functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            const mtfFilter = document.getElementById('mtfFilter');
+            const availableUnits = document.getElementById('availableUnits');
+            const assignedUnits = document.getElementById('assignedUnits');
+
+            // Filter units based on selection
+            mtfFilter.addEventListener('change', (e) => {
+                const selectedCategory = e.target.value;
+                const allUnits = availableUnits.getElementsByClassName('mtf-item');
+                
+                Array.from(allUnits).forEach(unit => {
+                    if (selectedCategory === 'all') {
+                        unit.style.display = 'block';
+                    } else {
+                        if (unit.dataset.unit === selectedCategory) {
+                            unit.style.display = 'block';
+                        } else {
+                            unit.style.display = 'none';
+                        }
+                    }
+                });
+            });
+
+            // Unit movement functionality
+            function moveUnit(e) {
+                if (e.target.classList.contains('mtf-item')) {
+                    const unit = e.target;
+                    const isAssigning = unit.parentElement.id === 'availableUnits' || 
+                                     unit.parentElement.parentElement.id === 'availableUnits';
+                    const targetList = isAssigning ? assignedUnits : availableUnits;
+                    const sourceList = isAssigning ? availableUnits : assignedUnits;
+
+                    // Remove empty message if it exists in assigned units
+                    const emptyMessage = assignedUnits.querySelector('.empty-message');
+                    if (emptyMessage && isAssigning) {
+                        emptyMessage.remove();
+                    }
+
+                    // Move the unit to the target list
+                    if (isAssigning) {
+                        // When assigning, move directly to assigned list
+                        targetList.appendChild(unit);
+                    } else {
+                        // When unassigning, move back to original category in available list
+                        const category = unit.dataset.unit;
+                        const categoryContainer = availableUnits.querySelector(`[data-category="${category}"]`);
+                        if (categoryContainer) {
+                            categoryContainer.appendChild(unit);
+                        } else {
+                            availableUnits.appendChild(unit);
+                        }
+                    }
+
+                    // Add empty message if assigned list is empty
+                    if (!isAssigning && assignedUnits.children.length === 0) {
+                        const empty = document.createElement('div');
+                        empty.className = 'empty-message';
+                        empty.textContent = 'NO UNITS CURRENTLY ASSIGNED';
+                        assignedUnits.appendChild(empty);
+                    }
+                }
+            }
+
+            availableUnits.addEventListener('click', moveUnit);
+            assignedUnits.addEventListener('click', moveUnit);
+        });
+
+        // Form submission handler
+        document.querySelector('.mission-report-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            document.getElementById('submitOverlay').style.display = 'flex';
+            
+            // Animate the processing sequence
+            const sequences = document.querySelectorAll('.processing-sequence p');
+            sequences.forEach((seq, index) => {
+                setTimeout(() => {
+                    seq.style.opacity = '1';
+                }, index * 1000);
+            });
+
+            // Show the proceed button after sequences
+            setTimeout(() => {
+                document.getElementById('proceedToAssessment').style.opacity = '1';
+            }, sequences.length * 1000);
+        });
+
+        // Proceed button handler
+        document.getElementById('proceedToAssessment').addEventListener('click', function() {
+            // Add fade-out animation to entire page
+            document.body.style.animation = 'fadeOut 1s forwards';
+            
+            // Redirect after animation
+            setTimeout(() => {
+                window.location.href = './report-assessment.html';
+            }, 1000);
+        });
+
+        // PDF download function
+        function downloadPDF() {
+            const pdfName = getStoredPDF();
+            if (!pdfName) {
+                alert('Error: No PDF template selected. Please log in again.');
+                return;
+            }
+
+            // Create the download link
+            const link = document.createElement('a');
+            link.href = `../PDFFiles/${pdfName}`;
+            link.download = pdfName;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
+</body>
+</html>

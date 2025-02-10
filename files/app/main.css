@@ -1,0 +1,109 @@
+:root {
+    --terminal-green: #00ff00;
+    --terminal-dark: #0a0a0a;
+    --terminal-glow: 0 0 10px rgba(0, 255, 0, 0.5);
+}
+
+body {
+    background-color: var(--terminal-dark);
+    color: var(--terminal-green);
+    font-family: 'Courier New', monospace;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+.terminal-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.header {
+    text-align: center;
+    padding: 20px;
+    border-bottom: 2px solid var(--terminal-green);
+}
+
+.scp-logo {
+    font-size: 2em;
+    font-weight: bold;
+    text-shadow: var(--terminal-glow);
+}
+
+.classification {
+    margin-top: 10px;
+    font-size: 1.2em;
+    color: #ff0000;
+}
+
+.login-screen {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-prompt {
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+}
+
+.terminal-input {
+    background: var(--terminal-dark);
+    border: 1px solid var(--terminal-green);
+    color: var(--terminal-green);
+    padding: 10px;
+    margin: 10px 0;
+    width: 100%;
+    font-family: 'Courier New', monospace;
+}
+
+.terminal-button {
+    background: var(--terminal-green);
+    color: var(--terminal-dark);
+    border: none;
+    padding: 10px 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+}
+
+.terminal-footer {
+    border-top: 2px solid var(--terminal-green);
+    padding: 20px;
+    text-align: center;
+}
+
+.warning {
+    color: #ff0000;
+    margin-bottom: 10px;
+}
+
+.blink {
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.login-message {
+    margin-top: 20px;
+    color: #ff0000;
+}
+
+.success-animation {
+    animation: success 2s forwards;
+}
+
+@keyframes success {
+    0% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.1); }
+    100% { opacity: 0; transform: scale(0); }
+}

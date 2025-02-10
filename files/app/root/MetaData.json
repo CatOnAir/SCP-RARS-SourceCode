@@ -1,0 +1,26 @@
+{
+    "scenarios": [
+        {
+            "name": "EXAMPLE-SCENARIO-01",
+            "uid": "SCP-2023-001",
+            "pdf_filename": "EXAMPLE-SCENARIO-01.pdf",
+            "mission_data": {
+                "priority": 5,
+                "operation_type": "CONTAIN-BREACH",
+                "secondary_operation": "EMER-EVAC",
+                "threat_level": 4
+            },
+            "location_data": {
+                "city_country": "BERLIN, GERMANY",
+                "address": "ABANDONED WAREHOUSE, INDUSTRIAL DISTRICT EAST, SECTOR 7",
+                "gps_coordinates": "52.52000, 13.40495"
+            },
+            "mtf_requirements": {
+                "needed_mtfs": ["EPSILON-11", "NU-7"],
+                "optional_mtfs": ["BETA-7", "MU-13"],
+                "personnel_min": 12,
+                "personnel_max": 24
+            }
+        }
+    ]
+}

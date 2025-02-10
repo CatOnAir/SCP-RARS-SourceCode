@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Assessment</title>
+    <link rel="stylesheet" href="assessment.css">
+</head>
+<body>
+    <div class="assessment-container">
+        <div class="score-circle">
+            <div class="score-number">0</div>
+            <div class="score-label">REPORT SCORE</div>
+        </div>
+
+        <div class="assessment-content">
+            <h1>REPORT ASSESSMENT</h1>
+            <div class="assessment-grid">
+                <div class="assessment-item">
+                    <h3>MISSION DETAILS</h3>
+                    <p class="detail-item">DESIGNATION: <span id="missionId">--</span></p>
+                    <p class="detail-item">PRIORITY: <span id="priority">--</span></p>
+                    <p class="detail-item">TYPE: <span id="opType">--</span></p>
+                </div>
+
+                <div class="assessment-item">
+                    <h3>DEPLOYMENT</h3>
+                    <p class="detail-item">UNITS ASSIGNED: <span id="unitCount">--</span></p>
+                    <p class="detail-item">COVERAGE: <span id="coverage">--</span></p>
+                    <p class="detail-item">EFFICIENCY: <span id="efficiency">--</span></p>
+                </div>
+
+                <div class="assessment-item">
+                    <h3>RISK ASSESSMENT</h3>
+                    <p class="detail-item">THREAT LEVEL: <span id="threat">--</span></p>
+                    <p class="detail-item">CASUALTY RISK: <span id="casualty">--</span></p>
+                    <p class="detail-item">SUCCESS RATE: <span id="success">--</span></p>
+                </div>
+            </div>
+
+            <div class="actions">
+                <a href="../../../index.html" class="return-button">RETURN TO HOMEPAGE</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simulate loading data
+        window.onload = function() {
+            // Animate score counter
+            const finalScore = Math.floor(Math.random() * 51) + 50; // Random score between 50-100
+            const scoreElem = document.querySelector('.score-number');
+            let currentScore = 0;
+            
+            const scoreInterval = setInterval(() => {
+                if (currentScore >= finalScore) {
+                    clearInterval(scoreInterval);
+                } else {
+                    currentScore++;
+                    scoreElem.textContent = currentScore;
+                }
+            }, 20);
+
+            // Generate random assessment data
+            const randomData = {
+                missionId: `OP-${Math.floor(Math.random() * 9000) + 1000}`,
+                priority: ['CRITICAL', 'HIGH', 'MODERATE', 'LOW'][Math.floor(Math.random() * 4)],
+                opType: ['CONTAINMENT', 'RECOVERY', 'INVESTIGATION'][Math.floor(Math.random() * 3)],
+                unitCount: Math.floor(Math.random() * 5) + 1,
+                coverage: `${Math.floor(Math.random() * 31) + 70}%`,
+                efficiency: `${Math.floor(Math.random() * 21) + 80}%`,
+                threat: ['SEVERE', 'MODERATE', 'HIGH'][Math.floor(Math.random() * 3)],
+                casualty: `${Math.floor(Math.random() * 30)}%`,
+                success: `${Math.floor(Math.random() * 21) + 80}%`
+            };
+
+            // Update DOM with random data
+            Object.keys(randomData).forEach(key => {
+                const elem = document.getElementById(key);
+                if (elem) elem.textContent = randomData[key];
+            });
+        };
+    </script>
+</body>
+</html>
